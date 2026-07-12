@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Prediction</title>
+
+    <style>
+
+        body{
+            background:#f2f2f2;
+            font-family:Arial;
+        }
+
+        .container{
+
+            width:400px;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+        }
+
+        button{
+
+            width:100%;
+            padding:12px;
+            margin-top:20px;
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:18px;
+
+        }
+
+        h2{
+
+            text-align:center;
+
+        }
+
+        h3{
+
+            color:green;
+            text-align:center;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Crop Prediction System</h2>
+
+<form action="/predict" method="post">
+
+<input type="number" step="any" name="N" placeholder="Nitrogen" required>
+
+<input type="number" step="any" name="P" placeholder="Phosphorus" required>
+
+<input type="number" step="any" name="K" placeholder="Potassium" required>
+
+<input type="number" step="any" name="temperature" placeholder="Temperature" required>
+
+<input type="number" step="any" name="humidity" placeholder="Humidity" required>
+
+<input type="number" step="any" name="ph" placeholder="pH Value" required>
+
+<input type="number" step="any" name="rainfall" placeholder="Rainfall" required>
+
+<button type="submit">
+Predict Crop
+</button>
+
+</form>
+
+<h3>{{ prediction_text }}</h3>
+
+</div>
+
+</body>
+</html>
